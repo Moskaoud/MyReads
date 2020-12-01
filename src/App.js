@@ -39,7 +39,8 @@ class BooksApp extends React.Component {
     }
     const shelvesNew = []
     for (let shelf in shelves) {
-      shelvesNew.push(<div className="bookshelf">
+      shelvesNew.push(
+      <div className="bookshelf" key={shelves[shelf][0]}>
         <h2 className="bookshelf-title">{shelves[shelf][0]}</h2>
         <Books books={this.state.books.filter(b => b.shelf === shelves[shelf][1])} changeShelf={this.changeShelf} />
       </div>)
