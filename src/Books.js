@@ -5,8 +5,7 @@ function Books(props) {
   let shelf = props.books;
 
   return <div className="bookshelf-books">
-    <ol className="books-grid">
-
+    <ol className="books-grid">      
       {shelf.map((cr) => (
 
         <li key={cr.id}>
