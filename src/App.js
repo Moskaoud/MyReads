@@ -30,8 +30,20 @@ class BooksApp extends React.Component {
         }))
       })
   }
+  
   render() {
-
+    const shelves = {
+      currentlyReading: ['Currently Reading', 'currentlyReading'],
+      wantToRead: ['Want to Read', 'wantToRead'],
+      read: ['Read', 'read']
+    }
+    const shelvesNew =[]
+    for(let shelf in shelves){
+      shelvesNew.push(<div className="bookshelf">
+        <h2 className="bookshelf-title">{shelves[shelf][0]}</h2>
+        <Books books={this.state.books.filter(b => b.shelf === shelves[shelf][1])} changeShelf={this.changeShelf} />
+      </div>)
+    }
     return (
       <div className="app">
         <Route exact path='/search' render={() => <Search changeShelf={this.changeShelf} books={this.state.books}/>} />
@@ -41,19 +53,8 @@ class BooksApp extends React.Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              <div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
-                  <Books books={this.state.books.filter(b => b.shelf === 'currentlyReading')} changeShelf={this.changeShelf} />
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Want to Read</h2>
-                  <Books books={this.state.books.filter(b => b.shelf === 'wantToRead')} changeShelf={this.changeShelf} />
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Read</h2>
-                  <Books books={this.state.books.filter(b => b.shelf === 'read')} changeShelf={this.changeShelf} />
-                </div>
+              <div>                
+              {shelvesNew}
               </div>
             </div>
             <div className="open-search" >
