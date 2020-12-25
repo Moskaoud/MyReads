@@ -1,61 +1,11 @@
 # MyReads Project
 
-This is  project for React Fundamentals. project main page  have list of books in categories Currently Reading, Want to read, Read shelves you can change category as you want and button to and book from search page to your favorite shelf
-
-
+React project with main page  have list of books in categories Currently Reading, Want to read, Read shelves you can change category as you want and button to and book from search page to your favorite shelf. search page as user type into fields books matches query displayed. If a book is assigned to a shelf on the main page and that book appears on the search page, the correct shelf should be selected on the search page.Books have the same state on both the search page and the main application page: If a book is on a bookshelf, that is reflected in both locations.
 # run
-npm install and npm start to get it installed and launched.
-## TL;DR
-
 To get started developing right away:
-
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-
-## Backend Server
-
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
-
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
-### `getAll`
-
-Method Signature:
-
-```js
-getAll()
-```
-
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
-
-### `update`
-
-Method Signature:
-
-```js
-update(book, shelf)
-```
-
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-
-Method Signature:
-
-```js
-search(query)
-```
-
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
-
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
-
+<img src='https://github.com/Moskaoud/MyReads/blob/master/r.png' />
+<img src='https://github.com/Moskaoud/MyReads/blob/master/s.png' />
+<img src='https://github.com/Moskaoud/MyReads/blob/master/r2.png' />
