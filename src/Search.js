@@ -25,7 +25,7 @@ class Search extends Component {
             BooksAPI.search(s.trim())
                 .then((books) => {
 
-                    if (books == undefined || books.error == "empty query" || s.trim() == '') {
+                    if (books === undefined || books.error === "empty query" || s.trim() === '') {
                         this.setState(() => ({
                             error: true,
                             query: []
@@ -66,11 +66,11 @@ class Search extends Component {
                 <div className="search-books-results">
                     <ol className="books-grid">
                         {
-                            this.state.error == true ?
+                            this.state.error === true ?
                                 <div>Books not found try search again</div> :
                                 (
                                     //(this.state.query !== undefined && this.state.query.length > 0) &&
-                                    this.state.query == undefined && this.state.query.length > 0 ?
+                                    this.state.query === undefined && this.state.query.length > 0 ?
                                         <div>Books not found</div> :
                                         (this.state.query !== undefined && this.state.query.length > 0) &&
                                         <Books books={this.state.query} changeShelf={this.props.changeShelf} />
